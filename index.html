@@ -5,7 +5,7 @@
 <title>Brianicals - Coming Soon</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <script>
         tailwind.config = {
@@ -13,9 +13,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#00000",
-                        "background-light": "#00000",
-                        "background-dark": "#FFFFFF",
+                        primary: "#FFFFFF",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#000000",
                     },
                     fontFamily: {
                         display: ["Instrument Serif", "serif"],
@@ -31,23 +31,59 @@
         .font-display {
             font-family: 'Instrument Serif', serif;
         }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes slideInLeft {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-left {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+        
+        .animate-slide-right {
+            animation: slideInRight 1s ease-out forwards;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 2s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display antialiased">
 <div class="flex items-center justify-center min-h-screen">
 <div class="text-center">
 <div class="space-y-2">
-<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest">COMING SOON</p>
-<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest">COMING SOON</p>
-<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest">COMING SOON</p>
+<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest animate-slide-left">COMING SOON</p>
+<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest animate-slide-right" style="animation-delay: 0.2s;">COMING SOON</p>
+<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest animate-slide-left" style="animation-delay: 0.4s;">COMING SOON</p>
 </div>
-<h1 class="text-6xl sm:text-7xl md:text-8xl italic my-8 sm:my-10 md:my-12 font-medium text-black dark:text-white tracking-wider">
+<h1 class="text-6xl sm:text-7xl md:text-8xl italic my-8 sm:my-10 md:my-12 font-medium text-black dark:text-white tracking-wider animate-float">
                 BRIANICALS
             </h1>
 <div class="space-y-2">
-<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest">COMING SOON</p>
-<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest">COMING SOON</p>
-<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest">COMING SOON</p>
+<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest animate-slide-right" style="animation-delay: 0.6s;">COMING SOON</p>
+<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest animate-slide-left" style="animation-delay: 0.8s;">COMING SOON</p>
+<p class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-400 dark:text-gray-600 tracking-widest animate-slide-right" style="animation-delay: 1s;">COMING SOON</p>
 </div>
 </div>
 </div>
